@@ -1,7 +1,7 @@
 #---------------------------------------------------------------------
 # GitHub Action Workflow to Deploy Flask App to AWS ElasticBeanstalk
 #
-# Version      Date        Info
+# Version      Date        Info 
 # 1.0          2019        Initial Version
 # 
 # Made by Denis Astahov ADV-IT Copyleft (c) 2019 
