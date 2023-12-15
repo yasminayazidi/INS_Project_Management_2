@@ -8,7 +8,7 @@ import { UnsubscribeOnDestroyAdapter } from '@shared';
   providedIn: 'root',
 })
 export class HolidayService extends UnsubscribeOnDestroyAdapter {
-  private readonly API_URL = 'assets/data/holidays.json';
+  private readonly API_URL = 'http://localhost:8082/departments';
   isTblLoading = true;
   dataChange: BehaviorSubject<AllHoliday[]> = new BehaviorSubject<AllHoliday[]>(
     []
@@ -39,38 +39,38 @@ export class HolidayService extends UnsubscribeOnDestroyAdapter {
   }
   addHoliday(holiday: AllHoliday): void {
     this.dialogData = holiday;
-    // this.httpClient.post(this.API_URL, holiday)
-    //   .subscribe({
-    //     next: (data) => {
-    //       this.dialogData = holiday;
-    //     },
-    //     error: (error: HttpErrorResponse) => {
-    //        // error code here
-    //     },
-    //   });
+    this.httpClient.post(this.API_URL, holiday)
+      .subscribe({
+        next: (data) => {
+          this.dialogData = holiday;
+        },
+        error: (error: HttpErrorResponse) => {
+           // error code here
+        },
+      });
   }
   updateHoliday(holiday: AllHoliday): void {
     this.dialogData = holiday;
-    // this.httpClient.put(this.API_URL + holiday.id, holiday)
-    //     .subscribe({
-    //       next: (data) => {
-    //         this.dialogData = holiday;
-    //       },
-    //       error: (error: HttpErrorResponse) => {
-    //          // error code here
-    //       },
-    //     });
+    this.httpClient.put(this.API_URL + holiday.id, holiday)
+        .subscribe({
+          next: (data) => {
+            this.dialogData = holiday;
+          },
+          error: (error: HttpErrorResponse) => {
+             // error code here
+          },
+        });
   }
   deleteHoliday(id: number): void {
     console.log(id);
-    // this.httpClient.delete(this.API_URL + id)
-    //     .subscribe({
-    //       next: (data) => {
-    //         console.log(id);
-    //       },
-    //       error: (error: HttpErrorResponse) => {
-    //          // error code here
-    //       },
-    //     });
+    this.httpClient.delete(this.API_URL + id)
+        .subscribe({
+          next: (data) => {
+            console.log(id);
+          },
+          error: (error: HttpErrorResponse) => {
+             // error code here
+          },
+        });
   }
 }
