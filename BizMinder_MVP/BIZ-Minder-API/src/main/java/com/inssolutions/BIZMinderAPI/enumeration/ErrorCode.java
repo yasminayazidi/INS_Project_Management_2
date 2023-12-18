@@ -6,6 +6,10 @@ public enum ErrorCode {
     ENTREPRISE_NOT_VALID(1001),
     ENTREPRISE_ALREADY_IN_USE(1002),
     // ErrorCode Address let 2000 to 2999
+
+    //Holidays Code let 3500 to 3600
+    HOLIDAYS_NOT_VALID(3500),
+    HOLIDAYS_NOT_FOUND(3501),
     //todo
     ;
     private int code;
@@ -15,5 +19,7 @@ public enum ErrorCode {
     public int getCode(){
         return  code;
     }
+
+
 
 }
