@@ -9,7 +9,7 @@ import com.inssolutions.BIZMinderAPI.validator.EntrepriseValidator;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
-@Slf4j
+@Slf4j // pour logger
 public class EntrepriseServiceImp implements EntrepriseService {
     private EntrepriseRepository entrepriseRepository;
 
