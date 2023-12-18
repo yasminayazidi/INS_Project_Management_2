@@ -5,9 +5,10 @@ import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class InvalidEntityException extends RuntimeException{
-    @Getter
     private ErrorCode errorCode;
+
     private List<String> errors;
     public InvalidEntityException( String message){
         super(message);
